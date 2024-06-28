@@ -22,11 +22,32 @@
       text-align: center;
     }
   </style>
+<script>
+function displayPath() {
+  // Mendapatkan URL saat ini
+  var currentUrl = window.location.href;
+  
+  // Membuat URL object
+  var url = new URL(currentUrl);
+  
+  // Mendapatkan path setelah "/annisa-choirul/"
+  var path = url.pathname.split("app/")[1];
+  
+  // Mendapatkan parameter query
+  var queryParams = url.search;
+
+  // Menampilkan path dan parameter di halaman
+  document.getElementById("path-display").textContent = path + queryParams;
+}
+
+// Menjalankan fungsi ketika halaman dimuat
+window.onload = displayPath;
+</script>
 </head>
 <body>
   <div class="container">
-
-    <h1>Judul Utama</h1>
+    
+    <h1 id="path-display"></h1>
     <img src="home.svg" alt="Deskripsi gambar" class="responsive-svg">
   </div>
   <img src="1.png" alt="Deskripsi gambar">
