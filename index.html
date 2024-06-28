@@ -30,14 +30,11 @@ function displayPath() {
   // Membuat URL object
   var url = new URL(currentUrl);
   
-  // Mendapatkan path setelah "/annisa-choirul/"
-  var path = url.pathname.split("app/")[1];
-  
-  // Mendapatkan parameter query
-  var queryParams = url.search;
+   var afidValue = url.searchParams.get('Nama');
 
-  // Menampilkan path dan parameter di halaman
-  document.getElementById("path-display").textContent = path + queryParams;
+            // Menyimpan nilai ke dalam elemen h1
+            var h1Element = document.getElementById('parameter-value');
+            h1Element.textContent = afidValue ? afidValue : 'No Afid Found';
 }
 
 // Menjalankan fungsi ketika halaman dimuat
