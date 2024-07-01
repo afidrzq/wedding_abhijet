@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+   .container {
+      position: relative; /* Membuat kontainer sebagai referensi posisi */
+    }
+
+    .container h1 {
+      position: absolute; /* Mengatur posisi H1 relatif terhadap kontainer */
+      top: 88%; /* Atur jarak dari atas */
+      left: 50%; /* Atur jarak dari kiri */
+      transform: translate(-50%, -50%); /* Pindahkan H1 ke tengah kontainer */
+      color: white; /* Sesuaikan warna teks */
+      background: rgba(0, 0, 0, 0.5); /* Latar belakang semi-transparan */
+      padding: 10px;
+      border-radius: 5px;
+      text-align: center;
+    }
+    .container button {
+      position: absolute; /* Mengatur posisi H1 relatif terhadap kontainer */
+      top: 95%; /* Atur jarak dari atas */
+      left: 50%; /* Atur jarak dari kiri */
+      transform: translate(-50%, -50%); /* Pindahkan H1 ke tengah kontainer */
+      color: white; /* Sesuaikan warna teks */
+      background: rgba(0, 0, 0, 0.5); /* Latar belakang semi-transparan */
+      padding: 10px;
+      border-radius: 5px;
+      text-align: center;
+    }
+     
+    
+  </style>
+</head>
+<script>
+function displayPath() {
+  // Mendapatkan URL saat ini
+  var currentUrl = window.location.href;
+  
+  // Membuat URL object
+  var url = new URL(currentUrl);
+  
+   var afidValue = url.searchParams.get('nama');
+
+            // Menyimpan nilai ke dalam elemen h1
+            var h1Element = document.getElementById('parameter-value');
+            h1Element.textContent = afidValue ? afidValue : 'No Afid Found';
+}
+
+// Menjalankan fungsi ketika halaman dimuat
+window.onload = displayPath;
+</script>
+</head>
+<body>
+  <div class="container">
+    
+    <h1 id="parameter-value">Hai</h1>
+   <!-- <img src="home.svg" alt="Deskripsi gambar" class="responsive-svg">
+  -->
+  <video id="myVideo" width="640" height="100%" class="align-items: center;" autoplay muted>
+    <source src="OPENING.mp4" type="video/mp4">
+     
+    Your browser does not support the video tag.
+    
+  </video>
+  <a href="index2.html">
+    <button>Pindah ke Halaman 2</button>
+    </a>
+     
+  </div>
+
+
+</body>
+</html>

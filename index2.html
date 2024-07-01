@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .container {
+      position: relative; /* Membuat kontainer sebagai referensi posisi */
+    }
+
+    .container h1 {
+      position: absolute; /* Mengatur posisi H1 relatif terhadap kontainer */
+      top: 85%; /* Atur jarak dari atas */
+      left: 50%; /* Atur jarak dari kiri */
+      transform: translate(-50%, -50%); /* Pindahkan H1 ke tengah kontainer */
+      color: white; /* Sesuaikan warna teks */
+      background: rgba(0, 0, 0, 0.5); /* Latar belakang semi-transparan */
+      padding: 10px;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .video-container {
+            max-width: 100%;
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+  </style>
+</head>
+<script>
+function displayPath() {
+  // Mendapatkan URL saat ini
+  var currentUrl = window.location.href;
+  
+  // Membuat URL object
+  var url = new URL(currentUrl);
+  
+  // Mendapatkan path setelah "/annisa-choirul/"
+  var path = url.pathname.split("app/")[1];
+  
+  // Mendapatkan parameter query
+  var queryParams = url.search;
+
+  // Menampilkan path dan parameter di halaman
+  document.getElementById("path-display").textContent = path + queryParams;
+}
+
+// Menjalankan fungsi ketika halaman dimuat
+window.onload = displayPath;
+
+
+  document.addEventListener("DOMContentLoaded", function() {
+      var video = document.getElementById("myVideo");
+      video.muted = true; // memastikan video tetap tanpa suara
+      video.play().catch(error => {
+          console.log("Autoplay failed:", error);
+      });
+  });
+
+</script>
+</head>
+<body>
+
+<video id="myVideo" width="640" height="480" autoplay muted>
+  <source src="Hal1.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+  <audio controls>
+    <source src="audio.weba" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</video>
+<video id="myVideo" width="640" height="480" autoplay muted>
+  <source src="Hal2.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<video id="myVideo" width="640" height="480" autoplay muted>
+  <source src="Hal3.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<video id="myVideo" width="640" height="480" autoplay muted>
+  <source src="Hal4.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<video id="myVideo" width="640" height="480" autoplay muted>
+  <source src="Hal5.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<video id="myVideo" width="640" height="480" autoplay muted>
+  <source src="Hal6.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<video id="myVideo" width="640" height="480" autoplay muted>
+  <source src="Hal8.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<div class="video-container">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/r_wjTjwyY6o?si=8xjbvCfMXk4RfYFX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+<img src="Hal9.png" alt="">
+
+<!--
+  <img src="1.png" alt="Deskripsi gambar">
+  <img src="2.png" alt="Deskripsi gambar">
+  <img src="3.png" alt="Deskripsi gambar">
+  <img src="4.png" alt="Deskripsi gambar">
+  <img src="5.png" alt="Deskripsi gambar">
+  <img src="7.png" alt="Deskripsi gambar">
+  <img src="8.png" alt="Deskripsi gambar">
+  <img src="9.png" alt="Deskripsi gambar">
+
+  -->
+  
+</body>
+</html>
