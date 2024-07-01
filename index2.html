@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .container {
+      position: relative; /* Membuat kontainer sebagai referensi posisi */
+    }
+
+    .background-element {
+            width: 300px;
+            height: 300px;
+            background-color: lightblue;
+            position: absolute; /* Membuat elemen ini posisinya relatif terhadap body */
+            z-index: 1; /* Nilai z-index lebih rendah */
+        }
+        .audio-element {
+            position: relative; /* Membuat elemen ini posisinya relatif terhadap body */
+           
+            background-color: white;
+            padding: 50px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+    .video-container {
+            max-width: 100%;
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .audio-container {
+          z-index: 1; /* Nilai z-index lebih tinggi untuk memastikan di depan elemen lain */
+          position: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            top: 20px;
+            right: 20px;
+        }
+        .audio-icon {
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+        }
+
+     audio  {
+        display: none;
+    
+     }
+
+     .videoMaps {
+            position: relative;
+        }
+
+     .maps {
+            position: absolute;
+        
+            top: 85%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            z-index: 1;
+        }
+        .btnMaps {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+  </style>
+</head>
+
+</head>
+<body>
+  <div class="audio-container">
+    <img src="iconmusic.png" alt="Play Audio" class="audio-icon" id="audioIcon">
+    <audio id="audio" controls autoplay>
+      <source src="audio.weba" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+</div>
+
+</div>
+<video id="myVideo" width="640" height="480" autoplay muted>
+  <source src="Hal1.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<video id="myVideo" width="640" height="480" autoplay muted>
+  <source src="Hal2.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<video id="myVideo" width="640" height="480" autoplay muted>
+  <source src="Hal3.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<div class="videoMaps">
+
+  
+  <video id="myVideo" width="640" height="480" autoplay muted>
+    <source src="Hal4.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="maps">
+    <a href="https://www.google.com/maps?q=Masjid+Al+Iman+(Kompleks+Kodam)" target="_blank">
+      <button class="btnMaps">Buka di Google Maps</button>
+    </a>
+  </div>
+</div>
+  
+<video id="myVideo" width="640" height="480" autoplay muted>
+  <source src="Hal5.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<video id="myVideo" width="640" height="480" autoplay muted>
+  <source src="Hal6.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<video id="myVideo" width="640" height="480" autoplay muted>
+  <source src="Hal8.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<div class="video-container">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/RAUri2E4jsU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+<img src="Hal9.png" alt="">
+
+
+<script>
+
+
+
+  document.addEventListener("DOMContentLoaded", function() {
+      var video = document.getElementById("myVideo");
+      video.muted = true; // memastikan video tetap tanpa suara
+      video.play().catch(error => {
+          console.log("Autoplay failed:", error);
+      });
+  });
+
+  var audio = document.getElementById('audio');
+  var audioIcon = document.getElementById('audioIcon');
+
+ audioIcon.addEventListener('click', function() {
+                audio.play() ? audio.pause() : audio.play();
+              
+                audioIcon.addEventListener('click', function() {
+               if (audio.paused) { 
+                audio.play(); }
+              else if (audio.play){
+                audio.pause();
+              }
+            });
+        });
+</script>
+
+<!--
+  <img src="1.png" alt="Deskripsi gambar">
+  <img src="2.png" alt="Deskripsi gambar">
+  <img src="3.png" alt="Deskripsi gambar">
+  <img src="4.png" alt="Deskripsi gambar">
+  <img src="5.png" alt="Deskripsi gambar">
+  <img src="7.png" alt="Deskripsi gambar">
+  <img src="8.png" alt="Deskripsi gambar">
+  <img src="9.png" alt="Deskripsi gambar">
+
+  -->
+  
+</body>
+</html>
